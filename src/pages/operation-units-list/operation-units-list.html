@@ -14,14 +14,22 @@
         <ion-spinner></ion-spinner>
     </div>
  
-    <ion-list no-lines>
-        <ion-item *ngFor="let item of items">
-            <ion-avatar item-left>
-                <ion-icon name="pin"></ion-icon>
-            </ion-avatar>
-            <h2>{{item.title}}</h2>
-            <p>{{item.address}}</p>
-        </ion-item>
+    <ion-list inset>
+        <ion-item-sliding>
+            <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+                <ion-avatar item-left>
+                    <ion-icon name="{{ item.icon }}"></ion-icon>
+                </ion-avatar>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.address }}</p>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="primary">
+                    <ion-icon name="map"></ion-icon>
+                    Mapa
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
  
 </ion-content>
