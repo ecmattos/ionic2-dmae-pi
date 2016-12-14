@@ -15,8 +15,8 @@
     </div>
  
     <ion-list inset>
-        <ion-item-sliding>
-            <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        <ion-item-sliding *ngFor="let item of items">
+            <ion-item>
                 <ion-avatar item-left>
                     <ion-icon name="{{ item.icon }}"></ion-icon>
                 </ion-avatar>
